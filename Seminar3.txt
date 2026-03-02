@@ -1,0 +1,184 @@
+
+import 'dart:io';
+
+// void main(List<String> arguments) {
+//   print('Hello world: ${dart_application_1.calculate()}!');
+// }
+
+// void main(){
+//   var firstName = "John";
+//   var lastName = "Doe";
+//   print("Full name is $firstName $lastName");
+// }
+
+void main() {
+// declaring variables
+String fullname = "Artan Nikolla";
+String address = "Albania";  
+num age = 20; // used to store any types of numbers 
+num height = 1.8;
+bool isMarried = false;
+
+// Declaring Variables
+double price = 1130.2232323233233; // valid.
+print(price.toStringAsFixed(2));
+   
+// printing variables value   
+print("Name is $fullname");
+print("Address is $address");
+print("Age is $age");
+print("Height is $height m");
+print("Married Status is $isMarried \n");
+
+//multiline strings 
+// Multi Line Using Single Quotes   
+String multiLineText = '''
+This is Multi Line Text
+with 3 single quote
+I am also writing here.
+''';
+   
+// Multi Line Using Double Quotes   
+String otherMultiLineText = """
+This is Multi Line Text
+with 3 double quote
+I am also writing here.
+""";
+
+// Printing Information   
+print("Multiline text is $multiLineText");
+print("Other multiline text is $otherMultiLineText \n");
+
+// ===== INT ===== convert from string to input ======= //
+String strvalue = "1";
+print("Type of strvalue is ${strvalue.runtimeType}");   
+int intvalue = int.parse(strvalue);
+print("Value of intvalue is $intvalue");
+// this will print data type
+print("Type of intvalue is ${intvalue.runtimeType} \n");
+
+/* ====== Double ======== Convert from String to Double ====== */
+String strvalue1 = "1.1";
+print("Type of strvalue is ${strvalue1.runtimeType}");
+double doublevalue = double.parse(strvalue1);
+print("Value of doublevalue is $doublevalue");
+// this will print data type
+print("Type of doublevalue is ${doublevalue.runtimeType}");
+
+/* ======= String ======= Convert from Int into a Sring  ====== */
+int one = 1;
+print("Type of one is ${one.runtimeType}");
+String oneInString = one.toString(); 
+print("Value of oneInString is $oneInString");
+// this will print data type
+print("Type of oneInString is ${oneInString.runtimeType}");
+
+/* ====== Double to int ====== Convert from Double to Int ====== */
+ double num1 = 10.01;
+   int num2 = num1.toInt(); // converting double to int
+
+  print("The value of num1 is $num1. Its type is ${num1.runtimeType}");
+  print("The value of num2 is $num2. Its type is ${num2.runtimeType}");
+
+//arrays in dart The list holds multiple values in a single variable. It is also called arrays. If you want to store multiple values without creating multiple variables, you can use a list.
+List<String> names = ["Raj", "John", "Max"];
+print("Value of names is $names");
+print("Value of names[0] is ${names[0]}"); // index 0
+print("Value of names[1] is ${names[1]}"); // index 1
+print("Value of names[2] is ${names[2]}"); // index 2
+
+  // Finding Length of List 
+int length = names.length;  
+print("The Length of names is $length");
+
+//objekt totalisht string
+Map<String, String> myDetails = {
+   'name': 'Krenar Lipo',
+   'address': 'Albania',
+   'fathername': 'Soe Doe',
+   'age': '35'
+};
+// displaying the output
+print('${myDetails['name']}, ${myDetails['age']} \n');
+
+//objekte te perbera
+/* In Dart, a map is an object where you can store data in key-value pairs. Each key occurs only once, but you can use same value multiple times. */
+Map<String, dynamic> studentDetails = {
+   'name': 'Student 1',
+   'address': 'Universiteti Metropolitan',
+   'lenda': 'Programim Mobile',
+   'age': 20
+};
+
+print(studentDetails['name']);
+print(studentDetails['age']);
+print('\n');
+//cikli for
+print('Afishim i te gjitha me cikel for');
+studentDetails.forEach((key, value) {
+  print('$key: $value');
+});
+
+//hapesirat e rreshtit te ri ose hapesire ne rresht
+print("I am from \nUS.");
+print("I am from \tUS.");
+
+//sets => An unordered collection of unique items is called set in dart. You can store unique data in sets.
+Set<String> weekday = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+print(weekday);
+
+//Runes With runes, you can find Unicode values of String. The Unicode value of a is 97, so runes give 97 as output.
+String value = "Krenar";
+print(value.runes);
+
+//boolean check
+String value1 = "Dart Tutorial";
+  int mosha = 10;
+  
+  print(value1 is String);
+  print(mosha is !int);
+
+  //modifikime te ndryshme
+  double ages = 24;
+  ages+= 1;  // Here age+=1 means age = age + 1.
+  print("After Addition Age is $ages");
+  ages-= 1;  //Here age-=1 means age = age - 1.
+  print("After Subtraction Age is $ages");
+  ages*= 2;  //Here age*=2 means age = age * 2.
+  print("After Multiplication Age is $ages");
+  ages/= 2;  //Here age/=2 means age = age / 2.
+  print("After Division Age is $ages");
+
+  // Inputet nga perdoruesi
+  // print("Si quheni?");
+  // String? name  = stdin.readLineSync();
+  // print("Sa vjec jeni?");
+  // int? number = int.parse(stdin.readLineSync()!);
+  // if(number >=18){
+  //   print("Mirese erdhe Zoti/Zonja ${name} ,qe jeni ${number} vjec");
+  // }else{
+  //   print("Zoti/Zonja ${name} jeni shume te vegjel per te vazhduar!");
+  // }
+   print("Si quheni?");
+  String? name = stdin.readLineSync();
+
+  print("Sa vjeç jeni?");
+  String? input = stdin.readLineSync();
+
+  double? ageInput = double.tryParse(input ?? '');
+
+  if (ageInput == null) {
+    print("Ju lutem shkruani një numër të vlefshëm.");
+    return;
+  }
+
+  int number = ageInput.round(); // ose .ceil()
+
+  if (number >= 18) {
+    print("Mirëse erdhe Zoti/Zonja $name, që jeni $number vjeç");
+  } else {
+    print("Zoti/Zonja $name, jeni shumë të vegjël për të vazhduar!");
+  }
+  
+
+} // end of main
