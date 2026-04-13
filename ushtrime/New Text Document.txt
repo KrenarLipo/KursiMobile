@@ -1,0 +1,18 @@
+goblin_game/
+├── pubspec.yaml
+├── assets/
+│   ├── goblin-alive.webp   ← your uploaded image
+│   ├── goblin-dead.jpg     ← your uploaded image
+│   └── boss.jpg            ← rename Ai_speaking_in_public_2.jpg
+└── lib/
+    ├── main.dart
+    ├── game_screen.dart
+    ├── level1_screen.dart
+    ├── level2_screen.dart
+    ├── models/
+    │   └── game_state.dart
+    ├── widgets/
+    │   └── player_lives_widget.dart
+    └── screens/
+        ├── game_over_screen.dart
+        └── victory_screen.dart
